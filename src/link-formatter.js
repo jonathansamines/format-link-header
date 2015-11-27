@@ -51,27 +51,27 @@ module.exports = {
   format: function formatLinkHeader(linkObject) {
     if(linkObject === null || linkObject === undefined) return '';
 
-    var uniqueAttributes = [];
+    var uniqueAttributes = {};
+    for (var linkProperty in linkObject) {
+      var attribute = linkObject[linkProperty];
+      var lastAttribute = uniqueAttributes[attribute.url];
+
+      if (lastAttribute === undefined) {
+        uniqueAttributes[attribute.url] = attribute;
+      }else {
+        uniqueAttributes[attribute.url].rel += ' ' + attribute.rel;
+      }
+    }
 
     return Object
-      .keys(linkObject)
-      .filter(function filterGroupedProperties(linkProperty, index, array) {
-        var attribute = linkObject[linkProperty];
-        var isGroupedProperty = uniqueAttributes.filter(function(attr) {
-          return attr.url === attribute.url;
-        }).length > 0;
-
-        uniqueAttributes.push(linkObject[linkProperty]);
-
-        return isGroupedProperty;
+      .keys(uniqueAttributes)
+      .map(function filter(attribute) {
+        return uniqueAttributes[attribute];
       })
       .map(function formatProperties(linkProperty, index, array) {
-        var linkPropertyObject = formatLinkAttributes(linkObject[linkProperty]);
+        var linkPropertyObject = formatLinkAttributes(linkProperty);
 
-        return '<' + linkPropertyObject.header + '>; rel="' + linkPropertyObject.rel + '"';
-      })
-      .filter(function dropRepeatedvalues(linkAttribute) {
-        return linkAttribute != undefined;
+        return '<' + linkPropertyObject.header + '>; rel="' + linkPropertyObject.rel + '"' + (array.length === 1 ? ';' : '');
       })
       .join(', ');
   }

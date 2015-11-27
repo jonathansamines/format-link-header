@@ -67,17 +67,17 @@ describe('+ link-formatter', function() {
     });
 
     it('should group together properties with related rel attribute values', function() {
-      var linkHeader = '<https://imaginary.url.notreal/?name=What,+me+worry>; rel="next page";';
+      var linkHeader = '<https://imaginary.url.notreal/?name=What, me worry>; rel="next page";';
       var linkObject = {
-        page: {
-          rel: 'page',
-          name: 'What, me worry',
-          url: 'https://imaginary.url.notreal/?name=What,+me+worry'
-        },
         next: {
           rel: 'next',
           name: 'What, me worry',
-          url: 'https://imaginary.url.notreal/?name=What,+me+worry'
+          url: 'https://imaginary.url.notreal/?name=What, me+worry'
+        },
+        page: {
+          rel: 'page',
+          name: 'What, me worry',
+          url: 'https://imaginary.url.notreal/?name=What, me+worry'
         }
       };
 
