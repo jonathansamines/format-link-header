@@ -1,0 +1,33 @@
+{
+  "name": "format-link-header",
+  "version": "0.1.0",
+  "description": "Format a link header object, to the original RFC 5988",
+  "main": "src/link-formatter.js",
+  "scripts": {
+    "test": "mocha test",
+    "test:watch": "mocha test -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathansamines/format-link-header.git"
+  },
+  "keywords": [
+    "format-link-header",
+    "web",
+    "links",
+    "header",
+    "links"
+  ],
+  "author": "Jonathan Samines <jn.samines@gmail.com> (http://jonathansamines.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathansamines/format-link-header/issues"
+  },
+  "homepage": "https://github.com/jonathansamines/format-link-header#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint": "^1.10.1",
+    "eslint-config-airbnb": "^1.0.2",
+    "mocha": "^2.3.4"
+  }
+}
