@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/travis/jonathansamines/format-link-header/master.svg?style=flat-square)](https://travis-ci.org/jonathansamines/format-link-header)
+
 # format-link-header
 Allows to format a given links ref object, to the format as described in RFC 5988. Precisely it achieves the exactly inverse process performed by the [parse-link-header](https://github.com/thlorenz/parse-link-header).
 
