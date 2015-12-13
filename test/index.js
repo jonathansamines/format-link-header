@@ -1,4 +1,4 @@
-var formatter = require('../src/link-formatter');
+var formatter = require('../src/index');
 var expect = require('chai').expect;
 
 describe('+ link-formatter', function() {

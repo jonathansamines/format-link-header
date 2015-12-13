@@ -2,7 +2,7 @@
   "name": "format-link-header",
   "version": "0.1.0",
   "description": "Format a link header object, to the original RFC 5988",
-  "main": "src/link-formatter.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha test",
     "test:watch": "mocha test -w"
