@@ -6,7 +6,7 @@ var url = require('url');
  */
 module.exports = function transformLinkProperty(linkProperty) {
   var queryParams = url.parse(linkProperty.url, true).query;
-  var linkObject = {};
+  var transformation = {};
 
   Object
     .keys(linkProperty)
@@ -15,9 +15,9 @@ module.exports = function transformLinkProperty(linkProperty) {
 
       // if it´s not a querystring param, then generate an attribute for it
       if (queryParams[navProperty] === undefined) {
-        linkObject[navProperty] = navPropertyValue;
+        transformation[navProperty] = navPropertyValue;
       }
     });
 
-  return linkObject;
+  return transformation;
 };

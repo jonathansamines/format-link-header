@@ -1,4 +1,4 @@
-var groupRelAttributes = require('../src/group-rels');
+var groupRelAttributes = require('../src/group-link-rels');
 var expect = require('chai').expect;
 
 var expectedProperties = [
@@ -47,7 +47,7 @@ var linkObject = {
   }
 };
 
-describe('+ group-rels', function() {
+describe('+ group-link-rels', function() {
   describe('#call', function() {
     var uniqueProperties = groupRelAttributes(linkObject);
 

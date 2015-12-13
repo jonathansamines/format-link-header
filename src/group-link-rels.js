@@ -23,7 +23,7 @@ module.exports = function groupRelAttributes(linkObject) {
 
   return Object
     .keys(uniqueProperties)
-    .map(function getValue(propertyName) {
+    .map(function getPropertyValue(propertyName) {
       return uniqueProperties[propertyName];
     });
 };

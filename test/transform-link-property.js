@@ -1,4 +1,4 @@
-var transformProperty = require('../src/transform-property');
+var transformProperty = require('../src/transform-link-property');
 var expect = require('chai').expect;
 
 var expectedTransformation = {
@@ -17,7 +17,7 @@ var linkProperty = {
   url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
 };
 
-describe('+ transform-property', function() {
+describe('+ transform-link-property', function() {
   describe('#call', function() {
     var transformedLink = transformProperty(linkProperty);
 
