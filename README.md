@@ -43,3 +43,38 @@ Allows to format a given links ref object, to the format as described in RFC 598
   ```bash
     <https://api.github.com/user/9287/repos?page=3&per_page=100>; rel="next", <https://api.github.com/user/9287/repos?page=1&per_page=100>; rel="prev"; pet="cat", <https://api.github.com/user/9287/repos?page=5&per_page=100>; rel="last"
   ```
+
+4. You can also define values for `url` as an object. When this format is detected, the value will be formatted via Node's `url.format()` method.
+
+  ```js
+    var link = { next:
+       { page: '3',
+         per_page: '100',
+         rel: 'next',
+         url: {
+            protocol: 'https:',
+            slashes: true,
+            auth: null,
+            host: 'api.github.com',
+            port: null,
+            hostname: 'api.github.com',
+            hash: null,
+            search: '?client_id=1&client_secret=2&page=2&per_page=100',
+            query: 'client_id=1&client_secret=2&page=2&per_page=100',
+            pathname: '/user/9287/repos',
+            path: '/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100',
+            href: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
+         }
+        },
+      prev:
+       { page: '1',
+         per_page: '100',
+         rel: 'prev',
+         pet: 'cat',
+         url: 'https://api.github.com/user/9287/repos?page=1&per_page=100' },
+      last:
+       { page: '5',
+         per_page: '100',
+         rel: 'last',
+         url: 'https://api.github.com/user/9287/repos?page=5&per_page=100' } }
+  ```

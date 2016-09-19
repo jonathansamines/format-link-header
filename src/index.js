@@ -1,3 +1,4 @@
+var formatLinkUrls = require('./format-link-urls');
 var groupRelAttributes = require('./group-link-rels');
 var transformLinkProperty = require('./transform-link-property');
 var formatLinkAttributes = require('./format-link-attributes');
@@ -9,6 +10,8 @@ var formatLinkAttributes = require('./format-link-attributes');
  */
 module.exports = function formatLinkHeader(linkObject) {
   if (linkObject === null || linkObject === undefined) return '';
+
+  formatLinkUrls(linkObject);
 
   return groupRelAttributes(linkObject)
     .map(function formatProperties(linkProperty) {
