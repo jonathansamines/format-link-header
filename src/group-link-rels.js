@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Get an array with unique link object rel attributes
  * since this attributes were created from the multiple "rel" values format
@@ -5,21 +7,19 @@
  * @return {Array}             Array which contains grouped rel attributes.
  */
 module.exports = function groupRelAttributes(linkObject) {
-  var linkPropertyName;
-  var linkProperty;
-  var uniqueProperties = {};
+  const uniqueProperties = {};
 
-  for (linkPropertyName in linkObject) {
-    if (!linkObject.hasOwnProperty(linkPropertyName)) continue;
+  Object
+    .keys(linkObject)
+    .forEach(function evalGroup(linkPropertyName) {
+      const linkProperty = linkObject[linkPropertyName];
 
-    linkProperty = linkObject[linkPropertyName];
-
-    if (uniqueProperties[linkProperty.url] === undefined) {
-      uniqueProperties[linkProperty.url] = linkProperty;
-    } else {
-      uniqueProperties[linkProperty.url].rel += ' ' + linkProperty.rel;
-    }
-  }
+      if (uniqueProperties[linkProperty.url] === undefined) {
+        uniqueProperties[linkProperty.url] = linkProperty;
+      } else {
+        uniqueProperties[linkProperty.url].rel += ` ${linkProperty.rel}`;
+      }
+    });
 
   return Object
     .keys(uniqueProperties)

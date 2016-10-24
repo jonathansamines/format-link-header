@@ -1,7 +1,9 @@
-var groupRelAttributes = require('../src/group-link-rels');
-var expect = require('chai').expect;
+'use strict';
 
-var expectedProperties = [
+const groupRelAttributes = require('../src/group-link-rels');
+const expect = require('chai').expect;
+
+const expectedProperties = [
   {
     client_id: '1',
     client_secret: '2',
@@ -20,7 +22,7 @@ var expectedProperties = [
   }
 ];
 
-var linkObject = {
+const linkObject = {
   current: {
     client_id: '1',
     client_secret: '2',
@@ -47,15 +49,15 @@ var linkObject = {
   }
 };
 
-describe('+ group-link-rels', function() {
-  describe('#call', function() {
-    var uniqueProperties = groupRelAttributes(linkObject);
+describe('+ group-link-rels', function () {
+  describe('#call', function () {
+    const uniqueProperties = groupRelAttributes(linkObject);
 
-    it('should return an array of unique properties', function() {
+    it('should return an array of unique properties', function () {
       expect(uniqueProperties).to.be.an.array;
     });
 
-    it('should group related rel attributes toguether by dropping duplicated entries on the link object', function() {
+    it('should group related rel attributes toguether by dropping duplicated entries on the link object', function () {
       expect(uniqueProperties).to.be.deep.equals(expectedProperties);
     });
   });
