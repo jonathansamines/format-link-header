@@ -1,6 +1,6 @@
 {
   "name": "format-link-header",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Format a link header object, to the original RFC 5988",
   "main": "src/index.js",
   "scripts": {
@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/jonathansamines/format-link-header#readme",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "eslint": "^1.10.1",
-    "eslint-config-airbnb": "^1.0.2",
-    "mocha": "^2.3.4"
+    "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb-base": "^9.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "mocha": "^3.1.0"
   }
 }

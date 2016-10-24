@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Stringify every linkProperty attribute in the format specified in the weblinks specs
  * Since the "url" attribute is shown in a special field, it is ignored
@@ -11,10 +13,10 @@ module.exports = function formatLinkAttributes(linkProperty) {
       return linkAttributeName !== 'url';
     })
     .map(function stringifyAttribute(linkAttributeName, index, array) {
-      var linkAttribute = linkProperty[linkAttributeName];
-      var isLastElement = index === array.length - 1;
+      const linkAttribute = linkProperty[linkAttributeName];
+      const isLastElement = index === array.length - 1;
 
-      return linkAttributeName + '="' + linkAttribute + (isLastElement ? '"' : '";');
+      return `${linkAttributeName}="${linkAttribute}${isLastElement ? '"' : '";'}`;
     })
     .join(' ');
 };

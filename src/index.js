@@ -1,6 +1,8 @@
-var groupRelAttributes = require('./group-link-rels');
-var transformLinkProperty = require('./transform-link-property');
-var formatLinkAttributes = require('./format-link-attributes');
+'use strict';
+
+const groupRelAttributes = require('./group-link-rels');
+const transformLinkProperty = require('./transform-link-property');
+const formatLinkAttributes = require('./format-link-attributes');
 
 /**
  * Format a link properties Object, to the format described in RFC 5988
@@ -12,10 +14,10 @@ module.exports = function formatLinkHeader(linkObject) {
 
   return groupRelAttributes(linkObject)
     .map(function formatProperties(linkProperty) {
-      var linkTransformation = transformLinkProperty(linkProperty);
-      var linkAttributes = formatLinkAttributes(linkTransformation);
+      const linkTransformation = transformLinkProperty(linkProperty);
+      const linkAttributes = formatLinkAttributes(linkTransformation);
 
-      return '<' + linkTransformation.url + '>; ' + linkAttributes;
+      return `<${linkTransformation.url}>; ${linkAttributes}`;
     })
     .join(', ');
 };
