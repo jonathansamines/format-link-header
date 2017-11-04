@@ -51,8 +51,6 @@ const linkObject = {
 
 describe('+ group-link-rels', function () {
   describe('#call', function () {
-    groupRelAttributes(linkObject);
-    groupRelAttributes(linkObject);
     it('should return an array of unique properties', function () {
       const uniqueProperties = groupRelAttributes(linkObject);
 

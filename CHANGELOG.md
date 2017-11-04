@@ -3,6 +3,7 @@
 ### v2.1.0
 - Update mocha, chai and eslint to latests versions
 - Add node 8 and node 9 to test matrix
+
 ### v2.0.0
 - Updated code to ES6.
 - All devDependencies updates.
