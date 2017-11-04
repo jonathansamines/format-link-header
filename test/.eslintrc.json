@@ -3,8 +3,9 @@
     "mocha": true
   },
   "rules": {
-    "func-names": 0,
-    "no-unused-expressions": 0,
-    "import/no-extraneous-dependencies": 0
+    "func-names": "off",
+    "prefer-destructuring": "off",
+    "no-unused-expressions": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }

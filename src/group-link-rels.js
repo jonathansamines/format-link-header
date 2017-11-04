@@ -12,7 +12,7 @@ module.exports = function groupRelAttributes(linkObject) {
   Object
     .keys(linkObject)
     .forEach(function evalGroup(linkPropertyName) {
-      const linkProperty = linkObject[linkPropertyName];
+      const linkProperty = Object.assign({}, linkObject[linkPropertyName]);
 
       if (uniqueProperties[linkProperty.url] === undefined) {
         uniqueProperties[linkProperty.url] = linkProperty;
