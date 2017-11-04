@@ -54,7 +54,7 @@ describe('+ group-link-rels', function () {
     const uniqueProperties = groupRelAttributes(linkObject);
 
     it('should return an array of unique properties', function () {
-      expect(uniqueProperties).to.be.an.array;
+      expect(uniqueProperties).to.be.an('array');
     });
 
     it('should group related rel attributes toguether by dropping duplicated entries on the link object', function () {
