@@ -8,18 +8,19 @@ const url = require('url');
  */
 module.exports = function transformLinkProperty(linkProperty) {
   const queryParams = url.parse(linkProperty.url, true).query;
-  const transformation = {};
 
-  Object
+  return Object
     .keys(linkProperty)
-    .forEach(function mapReferenceProperties(navProperty) {
+    .reduce(function createTransform(transformation, navProperty) {
       const navPropertyValue = linkProperty[navProperty];
 
       // if it´s not a querystring param, then generate an attribute for it
       if (queryParams[navProperty] === undefined) {
-        transformation[navProperty] = navPropertyValue;
+        return Object.assign({}, transformation, {
+          [navProperty]: navPropertyValue,
+        });
       }
-    });
 
-  return transformation;
+      return transformation;
+    }, {});
 };

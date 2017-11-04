@@ -6,7 +6,7 @@ const expect = require('chai').expect;
 describe('+ link-formatter', function () {
   describe('#call', function () {
     it('should format a proper link header with rel attributes', function () {
-      const linkHeader =
+      const expectedLinkHeader =
         '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100>; rel="next", ' +
         '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100>; rel="last"';
 
@@ -29,7 +29,7 @@ describe('+ link-formatter', function () {
         }
       };
 
-      expect(formatter(linkObject)).to.be.equal(linkHeader);
+      expect(formatter(linkObject)).to.be.equal(expectedLinkHeader);
     });
 
     it('should return a blank string if the link object is nullable', function () {
@@ -38,7 +38,7 @@ describe('+ link-formatter', function () {
     });
 
     it('should group together properties with related rel attribute values', function () {
-      const linkHeader = '<https://imaginary.url.notreal?name=value>; rel="next page"; hreflang="es"';
+      const expectedLinkHeader = '<https://imaginary.url.notreal?name=value>; rel="next page"; hreflang="es"';
       const linkObject = {
         next: {
           rel: 'next',
@@ -54,7 +54,7 @@ describe('+ link-formatter', function () {
         }
       };
 
-      expect(formatter(linkObject)).to.be.equal(linkHeader);
+      expect(formatter(linkObject)).to.be.equal(expectedLinkHeader);
     });
   });
 });

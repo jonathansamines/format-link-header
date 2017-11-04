@@ -12,9 +12,9 @@ const linkAttributes = {
 
 describe('+ format-link-attributes', function () {
   describe('#call', function () {
-    const attributes = formatLinkAttributes(linkAttributes);
-
     it('it should stringify the link attributes as a list of key="value" separated by semicolons, excluding the url attribute', function () {
+      const attributes = formatLinkAttributes(linkAttributes);
+
       expect(attributes).to.be.equals('rel="last"; hreflang="es"; content="boom"');
     });
   });
