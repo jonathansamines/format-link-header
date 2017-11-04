@@ -4,7 +4,7 @@
     "sourceType": "script"
   },
   "rules": {
-    "comma-dangle": 0,
-    "prefer-arrow-callback": 0
+    "comma-dangle": "off",
+    "prefer-arrow-callback": "off"
   }
 }
