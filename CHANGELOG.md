@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.1.1
+- Update project configurations
+
 ### v2.1.0
 - Update mocha, chai and eslint to latests versions
 - Add node 8 and node 9 to test matrix
