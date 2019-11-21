@@ -4,6 +4,8 @@
     "sourceType": "script"
   },
   "rules": {
+    "strict": "off",
+    "prefer-object-spread": "off",
     "comma-dangle": "off",
     "prefer-arrow-callback": "off"
   }

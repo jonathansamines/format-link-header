@@ -24,9 +24,10 @@ test('@call => should format a proper link header with rel attributes', (t) => {
   };
 
   const actual = formatter(linkObject);
-  const expected =
-    '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100>; rel="next", ' +
-    '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100>; rel="last"';
+  const expected = (
+    '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100>; rel="next", '
+    + '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100>; rel="last"'
+  );
 
   t.is(actual, expected);
 });
