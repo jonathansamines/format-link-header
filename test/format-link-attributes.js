@@ -1,21 +1,33 @@
 'use strict';
 
+const test = require('ava');
 const formatLinkAttributes = require('../src/format-link-attributes');
-const expect = require('chai').expect;
 
-const linkAttributes = {
-  rel: 'last',
-  hreflang: 'es',
-  content: 'boom',
-  url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
-};
+function createLinkAttributes(attrs) {
+  return {
+    rel: 'last',
+    hreflang: 'es',
+    content: 'boom',
+    ...attrs,
+  };
+}
 
-describe('+ format-link-attributes', function () {
-  describe('#call', function () {
-    it('it should stringify the link attributes as a list of key="value" separated by semicolons, excluding the url attribute', function () {
-      const attributes = formatLinkAttributes(linkAttributes);
+test('@call => should stringify link attributes', (t) => {
+  const attrs = createLinkAttributes();
 
-      expect(attributes).to.be.equals('rel="last"; hreflang="es"; content="boom"');
-    });
+  const actual = formatLinkAttributes(attrs);
+  const expected = 'rel="last"; hreflang="es"; content="boom"';
+
+  t.is(actual, expected);
+});
+
+test('@call => should ignore the url attribute', (t) => {
+  const attrs = createLinkAttributes({
+    url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
   });
+
+  const actual = formatLinkAttributes(attrs);
+  const expected = 'rel="last"; hreflang="es"; content="boom"';
+
+  t.is(actual, expected);
 });
