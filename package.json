@@ -7,8 +7,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "pretest": "npm run lint",
-    "test": "nyc mocha test",
-    "test:watch": "mocha test -w"
+    "test": "nyc ava",
+    "test:watch": "ava -w"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,10 @@
   },
   "homepage": "https://github.com/jonathansamines/format-link-header#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
+    "ava": "^2.4.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.0.1",
-    "mocha": "^6.2.2",
     "nyc": "^14.1.1"
   },
   "nyc": {

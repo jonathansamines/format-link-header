@@ -1,7 +1,7 @@
 'use strict';
 
+const test = require('ava');
 const groupRelAttributes = require('../src/group-link-rels');
-const expect = require('chai').expect;
 
 const expectedProperties = [
   {
@@ -49,18 +49,14 @@ const linkObject = {
   }
 };
 
-describe('+ group-link-rels', function () {
-  describe('#call', function () {
-    it('should return an array of unique properties', function () {
-      const uniqueProperties = groupRelAttributes(linkObject);
+test('@call => should return an array of unique properties', (t) => {
+  const uniqueProperties = groupRelAttributes(linkObject);
 
-      expect(uniqueProperties).to.be.an('array');
-    });
+  t.true(Array.isArray(uniqueProperties));
+});
 
-    it('should group related rel attributes toguether by dropping duplicated entries on the link object', function () {
-      const uniqueProperties = groupRelAttributes(linkObject);
+test('@call => should group related rel attributes together by deduplicating entries', (t) => {
+  const uniqueProperties = groupRelAttributes(linkObject);
 
-      expect(uniqueProperties).to.be.deep.equals(expectedProperties);
-    });
-  });
+  t.deepEqual(uniqueProperties, expectedProperties);
 });

@@ -1,60 +1,59 @@
 'use strict';
 
+const test = require('ava');
 const formatter = require('../src/index');
-const expect = require('chai').expect;
 
-describe('+ link-formatter', function () {
-  describe('#call', function () {
-    it('should format a proper link header with rel attributes', function () {
-      const expectedLinkHeader =
-        '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100>; rel="next", ' +
-        '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100>; rel="last"';
+test('@call => should format a proper link header with rel attributes', (t) => {
+  const linkObject = {
+    next: {
+      client_id: '1',
+      client_secret: '2',
+      page: '2',
+      per_page: '100',
+      rel: 'next',
+      url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
+    },
+    last: {
+      client_id: '1',
+      client_secret: '2',
+      page: '3',
+      per_page: '100',
+      rel: 'last',
+      url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100'
+    }
+  };
 
-      const linkObject = {
-        next: {
-          client_id: '1',
-          client_secret: '2',
-          page: '2',
-          per_page: '100',
-          rel: 'next',
-          url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100'
-        },
-        last: {
-          client_id: '1',
-          client_secret: '2',
-          page: '3',
-          per_page: '100',
-          rel: 'last',
-          url: 'https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100'
-        }
-      };
+  const actual = formatter(linkObject);
+  const expected =
+    '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=2&per_page=100>; rel="next", ' +
+    '<https://api.github.com/user/9287/repos?client_id=1&client_secret=2&page=3&per_page=100>; rel="last"';
 
-      expect(formatter(linkObject)).to.be.equal(expectedLinkHeader);
-    });
+  t.is(actual, expected);
+});
 
-    it('should return a blank string if the link object is nullable', function () {
-      expect(formatter(null)).to.be.equal('');
-      expect(formatter(undefined)).to.be.equal('');
-    });
+test('@call => should return an empty string if the link object is nullable', (t) => {
+  t.is(formatter(null), '');
+  t.is(formatter(undefined), '');
+});
 
-    it('should group together properties with related rel attribute values', function () {
-      const expectedLinkHeader = '<https://imaginary.url.notreal?name=value>; rel="next page"; hreflang="es"';
-      const linkObject = {
-        next: {
-          rel: 'next',
-          name: 'value',
-          hreflang: 'es',
-          url: 'https://imaginary.url.notreal?name=value'
-        },
-        page: {
-          rel: 'page',
-          name: 'value',
-          hreflang: 'es',
-          url: 'https://imaginary.url.notreal?name=value'
-        }
-      };
+test('@call => should group together properties with related rel attribute values', (t) => {
+  const linkObject = {
+    next: {
+      rel: 'next',
+      name: 'value',
+      hreflang: 'es',
+      url: 'https://imaginary.url.notreal?name=value'
+    },
+    page: {
+      rel: 'page',
+      name: 'value',
+      hreflang: 'es',
+      url: 'https://imaginary.url.notreal?name=value'
+    }
+  };
 
-      expect(formatter(linkObject)).to.be.equal(expectedLinkHeader);
-    });
-  });
+  const actual = formatter(linkObject);
+  const expected = '<https://imaginary.url.notreal?name=value>; rel="next page"; hreflang="es"';
+
+  t.is(actual, expected);
 });
