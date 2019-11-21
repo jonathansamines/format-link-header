@@ -1,8 +1,9 @@
 ## Changelog
 
-### v2.1.1
+### 2.2.0
 - Update project configurations
 - Use ava as test runner and built-in assertions library. Use nyc to instrument code for code coverage
+- Remove support to Node 6
 
 ### v2.1.0
 - Update mocha, chai and eslint to latests versions
