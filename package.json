@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "Format a link header object, to the original RFC 5988",
   "main": "src/index.js",
+  "files": ["src"],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -21,8 +22,11 @@
     "header",
     "links"
   ],
-  "author": "Jonathan Samines <jn.samines@gmail.com> (http://jonathansamines.com)",
+  "author": "Jonathan Samines <jn.samines@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
   "bugs": {
     "url": "https://github.com/jonathansamines/format-link-header/issues"
   },
