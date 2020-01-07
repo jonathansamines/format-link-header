@@ -1,6 +1,6 @@
 {
   "name": "format-link-header",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Format a link header object, to the original RFC 5988",
   "main": "src/index.js",
   "files": [
