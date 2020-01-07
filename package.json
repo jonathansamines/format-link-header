@@ -3,7 +3,9 @@
   "version": "2.1.0",
   "description": "Format a link header object, to the original RFC 5988",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -33,10 +35,10 @@
   "homepage": "https://github.com/jonathansamines/format-link-header#readme",
   "devDependencies": {
     "ava": "^2.4.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.0.1",
-    "nyc": "^14.1.1"
+    "eslint-plugin-import": "^2.19.1",
+    "nyc": "^15.0.0"
   },
   "nyc": {
     "check-coverage": true,
