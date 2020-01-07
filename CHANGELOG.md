@@ -2,6 +2,7 @@
 
 ### 2.2.0
 - Use eslint v6
+- Use nyc v15
 - Update project configurations
 - Use ava as test runner and built-in assertions library. Use nyc to instrument code for code coverage
 - Remove support to unmantained Node.js versions (6 and 8)
