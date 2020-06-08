@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.1
+- Apply dev-dependencies in-range updates
+
 ## 3.0.0
 ### Breaking Changes
 - Remove support to unmantained Node.js versions (6 and 8) ([#7](https://github.com/jonathansamines/format-link-header/pull/7))
