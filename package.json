@@ -34,11 +34,11 @@
   },
   "homepage": "https://github.com/jonathansamines/format-link-header#readme",
   "devDependencies": {
-    "ava": "^3.8.2",
+    "ava": "^3.9.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "nyc": "^15.0.1"
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "nyc": "^15.1.0"
   },
   "nyc": {
     "check-coverage": true,
