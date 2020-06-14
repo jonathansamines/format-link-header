@@ -1,7 +1,7 @@
 # format-link-header
 
 [![npm](https://img.shields.io/npm/v/format-link-header?style=flat-square)](https://www.npmjs.com/package/format-link-header)
-[![Build Status](https://img.shields.io/travis/jonathansamines/format-link-header/master.svg?style=flat-square)](https://travis-ci.org/jonathansamines/format-link-header)
+[![Build Status](https://github.com/jonathansamines/format-link-header/workflows/Node.js%20CI/badge.svg)](https://github.com/jonathansamines/format-link-header/actions)
 
 Allows to format a given links ref object, to the format as described in RFC 5988. Precisely it achieves the exactly inverse process performed by the [parse-link-header](https://github.com/thlorenz/parse-link-header).
 

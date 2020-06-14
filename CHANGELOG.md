@@ -1,7 +1,11 @@
 # Changelog
 
-## 3.0.1
+## 3.1.0
+
+### Maintainance
 - Apply dev-dependencies in-range updates
+- Update node 12 and node 14 to test matrix
+- Use volta to pin node development version
 
 ## 3.0.0
 ### Breaking Changes
