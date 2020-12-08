@@ -1,0 +1,14 @@
+{
+  "versions": [
+    {
+      "version": "3.x",
+      "target": {
+        "node": "lts"
+      },
+      "response": {
+        "type": "time-permitting",
+        "paid": false
+      }
+    }
+  ]
+}

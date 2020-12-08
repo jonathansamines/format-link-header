@@ -1,5 +1,9 @@
 # Changelog
 
+## Next
+- Use Node 14 as default runtime version
+- Add package-support metadata
+
 ## 3.1.0
 
 ### Maintainance
