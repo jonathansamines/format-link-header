@@ -1,8 +1,10 @@
 # Changelog
 
-## Next
-- Use Node 14 as default runtime version
-- Add package-support metadata
+## 3.1.1
+### Maintainance
+- [#18](https://github.com/jonathansamines/format-link-header/pull/18) Use Node 14 as default runtime version
+- [#18](https://github.com/jonathansamines/format-link-header/pull/18) Add package-support metadata
+- [#16](https://github.com/jonathansamines/format-link-header/pull/18) Enable github code scanning
 
 ## 3.1.0
 
