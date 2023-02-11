@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/jonathansamines/format-link-header#readme",
   "devDependencies": {
-    "ava": "^3.14.0",
+    "ava": "^5.2.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
